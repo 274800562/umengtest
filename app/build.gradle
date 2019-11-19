@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.qz.fvideo"
+        applicationId "com.qz.testdemo"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
