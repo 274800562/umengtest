@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.qz.fvideo">
+
+    <application
+        android:name=".MyApplacation"
+        android:allowBackup="true"
+        tools:replace="android:allowBackup"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SplashActivity"/>
+        <activity android:name=".DetailActivity"/>
+        <activity android:name=".ListActivity"/>
+
+        <activity android:name=".NotificationDialogActivity"
+                  android:theme="@style/transparent.Theme"
+            />
+
+
+        <!--***************友盟推送配置****************-->
+
+        <!--华为push通道-->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=101042843" />
+        <!--魅族push应用定义消息receiver声明 -->
+        <receiver android:name=".MeizuTestReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息-->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <!-- 兼容低版本Flyme3推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+
+                <category android:name="${applicationId}"></category>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".UmengClickActivity"
+            android:launchMode="singleTask"
+            android:exported="true" />
+
+
+        <!--***************友盟推送配置****************-->
+    </application>
+
+</manifest>
